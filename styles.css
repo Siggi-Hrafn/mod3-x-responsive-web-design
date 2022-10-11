@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; /* setting rem units to be more readable - 1.6rem = 16px */
+}
+
+body {
+    font-family: Rubik, sans-serif;
+    font-size: 1.6rem; /* 16px */
+    line-height: 2.4rem;
+    color: hsl(0, 0%, 25%);
+    background-color: hsl(0, 0%, 95%);
+}
+/* ============== standard tag styles ==================*/
+
+h3 {
+    line-height: 2.4rem;
+    margin-bottom: 1.6rem;
+}
+
+ul {
+    list-style: none;
+}
+
+code {
+    color: hsl(5, 75%, 35%);
+}
+
+code span {
+    color: hsl(5, 0%, 60%);
+}
+/* ============== reusable classes ==================*/
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.section {
+    padding: 4rem 0; 
+}
+
+.light {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.dark {
+    background-color: hsl(0, 0%, 88%);
+}
+
+.container {
+    width: clamp(16rem, 90vw, 144rem);
+    margin-inline: auto;
+    padding: 7.2rem 0;
+}
+
+.container-1 {
+    width: min(100%, 95rem); /*min 95% max 95rem=950px after conversion */
+    margin-inline: auto; /* margin on left and right  */
+    border: 0.3rem solid red;
+    padding: 3.2rem; /* padding 3.2rem=32px after conversion */
+}
+
+.container-2 {
+    /*clamp(min, val, max) => min-with 32rem = 320px, val = 90% of viewport width, max-width= 144rem=1440px */
+    width: clamp(32rem, 90vw, 144rem); 
+    margin-inline: auto; /* margin on left and right  */
+    border: 0.3rem solid green;
+    padding: 3.2rem; /* padding 3.2rem=32px after conversion */
+    margin: 3.2rem 0;
+}
+
+
+.text-indent {
+    text-indent: 3.2rem;
+}
+
+.text-columns {
+    column-count: 1;
+}
+    @media screen and (min-width: 56rem) {
+        .text-columns {
+            column-count: 2;
+            column-gap: 8rem;
+        }
+    }
+
+    @media screen and (min-width:88rem) {
+        .text-columns {
+            column-count: 3;
+            column-gap: 8rem;
+        }
+    }
+
+.code-container {
+    position: relative;
+    padding: 3.2rem;
+    background-color: hsl(0, 0%, 95%);
+}
+/* ============== structure tag styles ==================*/
+
+header {
+    background-color: hsl(0, 0%, 95%);
+}
+
+header li>a {
+    font-weight: 500;
+    text-decoration: none;
+    color: hsl(0, 0%, 35%);
+    text-transform: uppercase;
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: .40rem;
+    padding: .8rem 1.4rem;
+    transition: all 150ms ease-in-out;
+}
+
+header li>a:hover {
+    cursor: pointer;
+    color: hsl(0, 0%, 95%);
+    background-color: hsl(0, 0%, 35%);
+}
+
