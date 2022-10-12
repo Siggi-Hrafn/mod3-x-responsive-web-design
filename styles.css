@@ -37,13 +37,6 @@ code span {
 }
 /* ============== reusable classes ==================*/
 
-.flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2.4rem;
-}
 
 .section {
     padding: 4rem 0; 
@@ -63,6 +56,17 @@ code span {
     padding: 7.2rem 0;
 }
 
+.fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    width: 100vw;
+    text-align: center;
+    padding-inline: 10%;
+    box-shadow: .1rem .2rem .3rem .2rem hsla(0, 0%, 25%, .15);
+}
+
 .container-1 {
     width: min(100%, 95rem); /*min 95% max 95rem=950px after conversion */
     margin-inline: auto; /* margin on left and right  */
@@ -78,7 +82,6 @@ code span {
     padding: 3.2rem; /* padding 3.2rem=32px after conversion */
     margin: 3.2rem 0;
 }
-
 
 .text-indent {
     text-indent: 3.2rem;
@@ -106,26 +109,151 @@ code span {
     padding: 3.2rem;
     background-color: hsl(0, 0%, 95%);
 }
+
+.first-section {
+    margin-top: 17rem;
+}
 /* ============== structure tag styles ==================*/
 
+/* ============== Header mobile first styles ==================*/
+
 header {
+    position: fixed;
     background-color: hsl(0, 0%, 95%);
 }
 
-header li>a {
-    font-weight: 500;
-    text-decoration: none;
+header nav {
+    position: absolute;
+    top: 100%;
+    right: 4%;
+    width: 90vw;
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 0 0 .6rem .6rem;
+    padding: 2.4rem 0;
+    box-shadow: .1rem .2rem .3rem .2rem hsla(0, 0%, 25%, .15);
+    clip-path: inset(0px -.5rem -.5rem -.5rem);
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    width: 100%;
+    margin-bottom: 1.6rem;
+}
+
+header nav ul li a {
+    display: block;
+    width: 100%;
     color: hsl(0, 0%, 35%);
+    text-decoration: none;
+    font-size: 2rem;
     text-transform: uppercase;
+    padding: 1.6rem 3.6rem;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+header nav ul li a:hover {
+    color: hsl(0, 0%, 95%);
+    background-color: hsl(0, 0%, 35%);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle:checked ~  nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~  nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 350ms;
+}
+ 
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 0;
     border: 1px solid hsl(0, 0%, 75%);
     border-radius: .40rem;
     padding: .8rem 1.4rem;
     transition: all 150ms ease-in-out;
+    margin: 6rem; 
 }
 
-header li>a:hover {
+.nav-toggle-label:hover {
     cursor: pointer;
     color: hsl(0, 0%, 95%);
     background-color: hsl(0, 0%, 35%);
 }
+
+/* ================ Header styles for desktop =======================*/
+
+@media screen and (min-width: 78rem) {
+
+    header .nav-toggle-label {
+        display: none;
+    }
+
+    header .flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 4rem;
+    }
+
+    header .flex-desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2.4rem;
+        height: 5.8rem;
+    }
+
+    header nav {
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2.4rem;
+        padding-top: 1.6rem;
+
+    }
+
+    header nav ul li a {
+        opacity: 1;
+        font-weight: 500;
+        text-decoration: none;
+        color: hsl(0, 0%, 35%);
+        text-transform: uppercase;
+        border: 1px solid hsl(0, 0%, 75%);
+        border-radius: .40rem;
+        padding: .8rem 1.4rem;
+        transition: all 150ms ease-in-out;
+    }
+
+    header ul li a:hover, a.active {
+        cursor: pointer;
+        color: hsl(0, 0%, 95%);
+        background-color: hsl(0, 0%, 35%);
+    }
+
+    header nav ul li a.burger-menu {
+        /* hide burger-menu until needed */
+        display: none;
+    }
+
+}
+
 

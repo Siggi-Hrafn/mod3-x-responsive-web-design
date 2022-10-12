@@ -5,27 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Responsive Web Design</title>
 </head>
 <body>
-    <header class="container">
+    <header class="fixed container">
         <div class="flex">
-            <div>
+            <div class="site-ID">
                 <h1 aria-label="Responsive Web Design">RWD</h1>
             </div>
-            <nav>
-                <ul class="flex">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <nav id="main-navigation">
+                <ul class="main-nav flex-mobile flex-desktop">
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#container">Container</a></li>
                     <li><a href="#columns">Columns</a></li>
                     <li><a href="#flexbox">Flexbox</a></li>
                     <li><a href="#grid">Grid</a></li>
-                    <li><a href="navigation">Navigation</a></li>
-                </ul>
+                    <li><a href="#navigation">Navigation</a></li>
+                </ul> 
             </nav>
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span><i class="fa fa-bars"></i></span>
+                </label>
+                <!--  
+                <ul id="responsive-nav" class="responsive-nav">
+                    <li>
+                        <a href="javascript:void(0);" class="burger-menu" onclick="responsiveMenu()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+                -->
+           
         </div>
     </header>
     <main>
-        <section id="container" class="section light">
+        <section id="container" class="section light first-section">
             <div class="container">
                 <h1>Container / Wrapper</h1>
                 <div class="container">
@@ -140,5 +156,6 @@
         </section>
     </main>
     <footer></footer>
+    <script src="./main.js"></script>
 </body>
 </html>
