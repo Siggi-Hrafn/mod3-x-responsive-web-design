@@ -269,3 +269,56 @@ header nav ul li a:hover {
         }
     }
 
+
+    /* ============== Section Flexbox styles ==================*/
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5.6rem;
+    padding: 4.8rem 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    padding: 2.4rem;
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 2.4rem;
+
+}
+
+.responsive-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 40rem;
+}
+
+.card-title {
+    margin: 2.4rem 0 -0.8rem 0 !important;
+}
+
+.card-content {
+    flex: 1 1 auto;
+    text-overflow: ellipsis;
+    height: 12rem;
+    margin-bottom: 2.4rem;
+}
+
+.card-footer {
+    position: relative;
+    clear: both;
+    top: 2.4rem;
+    left: -2.4rem;
+    width: 114%;
+    background-color: hsl(0, 0%, 75%);
+    padding: 2.4rem;
+    border-radius: 0 0 2.4rem 2.4rem;
+}
+
+.card-footer-icon {
+    float: right;
+}
