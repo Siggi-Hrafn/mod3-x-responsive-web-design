@@ -87,23 +87,6 @@ code span {
     text-indent: 3.2rem;
 }
 
-.text-columns {
-    column-count: 1;
-}
-    @media screen and (min-width: 56rem) {
-        .text-columns {
-            column-count: 2;
-            column-gap: 8rem;
-        }
-    }
-
-    @media screen and (min-width:88rem) {
-        .text-columns {
-            column-count: 3;
-            column-gap: 8rem;
-        }
-    }
-
 .code-container {
     position: relative;
     padding: 3.2rem;
@@ -120,6 +103,11 @@ code span {
 header {
     position: fixed;
     background-color: hsl(0, 0%, 95%);
+}
+
+header a {
+    text-decoration: none;
+    color: hsl(0, 0%, 35%);
 }
 
 header nav {
@@ -256,4 +244,28 @@ header nav ul li a:hover {
 
 }
 
+/* ============== Section text columns styles ==================*/
+
+.text-scale-hdln {
+    font-size: clamp(2.4rem, -2.82rem + 5.6vw, 3.8rem );
+    line-height: 3.2rem;
+    margin: 1.6rem 0 .8rem 0;
+}
+
+.text-columns {
+    column-count: 1;
+}
+    @media screen and (min-width: 56rem) {
+        .text-columns {
+            column-count: 2;
+            column-gap: 8rem;
+        }
+    }
+
+    @media screen and (min-width:88rem) {
+        .text-columns {
+            column-count: 3;
+            column-gap: 8rem;
+        }
+    }
 
