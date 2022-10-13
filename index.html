@@ -19,7 +19,7 @@
                 <ul class="main-nav flex-mobile flex-desktop">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#container">Container</a></li>
-                    <li><a href="#columns">Columns</a></li>
+                    <li><a href="#text-columns">Columns</a></li>
                     <li><a href="#flexbox">Flexbox</a></li>
                     <li><a href="#grid">Grid</a></li>
                     <li><a href="#navigation">Navigation</a></li>
@@ -31,6 +31,9 @@
         </div>
     </header>
     <main>
+        <section id="home" class="section dark first-section">
+
+        </section>
         <section id="container" class="section light first-section">
             <div class="container">
                 <h1>Container / Wrapper</h1>
@@ -75,11 +78,27 @@
         <section id="text-columns" class="section dark">
             <div class="container">
                 <div>
-                    <h1>Text columns</h1>
+                    <h1>Scale Text & Text Columns</h1>
                     <div class="container-2">
-                    <h3>CSS - text columns & media queries</h3>
-                    <div class="code-container">
+                    <h3>CSS - Scaleable text & text columns with media queries</h3>
+                    <div class="code-container">         
                     <code>
+                        .text-scale-headline1 { <br>
+                            <span>/* clamp(min, val, max) => min-size 1.6rem = 16px, val = scale 5% of viewport width, max-size 3.8rem = 38px */</span> <br>
+                            <div class="text-indent"> font-size: clamp(2.4rem, 5vw, 3.8rem); </div>
+                            <span>/* Scaling lineheight as well */</span>
+                            <div class="text-indent"> line-height: clamp(4rem, 5vw, 6.4rem); </div>
+                        } <br>
+
+                        .text-scale-p { <br>
+                            <span>/* clamp(min, val, max) => min-size 1.6rem = 16px, val = scale 5% of viewport width, max-size 1.8rem = 18px */</span> <br>
+                            <div class="text-indent"> font-size: clamp(1.6rem, 5vw, 1.8rem ); </div>
+                            <span>/* Scaling lineheight as well */</span>
+                            <div class="text-indent"> line-height: clamp(2.8rem, 5vw, 3.2rem); </div>
+                        } <br>
+                           <br><br>
+
+                        <span>/* Text columns setup with nested media queries */ </span><br>
                         .text-columns { <br>
                             <div class="text-indent"> column-count: 1; </div>
                         } <br>
@@ -102,8 +121,8 @@
                     </div>
                     </div>
                     <div>
-                        <h1 class="text-scale-hdln">Scalable Headline</h1>
-                            <p class="text-columns">
+                        <h1 class="text-scale-headline1">Scalable Headline</h1>
+                            <p class="text-columns text-scale-p ">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dolorem aliquam sunt similique, magni sequi a ab iste recusandae. Eius voluptate molestias eum repudiandae commodi unde necessitatibus repellendus consectetur quia.
                                 Ullam excepturi minima reprehenderit ex asperiores, et, blanditiis explicabo odio porro consequuntur rerum eum omnis eius corporis! Soluta voluptatibus autem provident, labore explicabo nemo minus iure velit dignissimos pariatur quod?
                                 Illum doloribus quam dignissimos tenetur? Laudantium sunt expedita ex accusamus porro hic laborum autem molestias eius commodi rem cumque voluptatum aspernatur, dolor doloribus atque adipisci quae. Exercitationem eligendi veniam nihil.
@@ -131,7 +150,7 @@
         </section>
         <section id="flexbox" class="section light">
             <div class="container">
-                <h1>Flexbox</h1>
+                <h1>Flexbox - Card Flow & Responsive Images</h1>
                 <code>
 
                 </code>
@@ -141,10 +160,10 @@
                             <img src="./img/01.jpg" alt="cute cat" class="responsive-img">
                         </div>
                         <div class="card-title">
-                            <h3>I´m tired</h3>
+                            <h3>I'm tired</h3>
                         </div>
                         <div class="card-content">
-                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. - so the cards themselves will stretch to the same height.</p>
                         </div>
                         <div class="card-footer">
                             <div class="card-footer-icon">
@@ -160,7 +179,7 @@
                             <h3>It wasn't me</h3>
                         </div>
                         <div class="card-content">
-                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+                            <p>This card has a little less content which means that it defines the height of the container the cards are in. - so the cards themselves will stretch to the same height.</p>
                         </div>
                         <div class="card-footer">
                             <div class="card-footer-icon">
@@ -176,7 +195,7 @@
                             <h3>I'm not sure about this</h3>
                         </div>
                         <div class="card-content">
-                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+                            <p>This card has even less content which means that it defines the height of the container the cards are in. </p>
                         </div>
                         <div class="card-footer">
                             <div class="card-footer-icon">
@@ -192,7 +211,7 @@
                             <h3>What now!?</h3>
                         </div>
                         <div class="card-content">
-                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. - so the cards themselves will stretch to the same height.</p>
                         </div>
                         <div class="card-footer">
                             <div class="card-footer-icon">
@@ -208,7 +227,7 @@
                             <h3>This is my favorite toy</h3>
                         </div>
                         <div class="card-content">
-                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. - so the cards themselves will stretch to the same height.</p>
                         </div>
                         <div class="card-footer">
                             <div class="card-footer-icon">
@@ -224,7 +243,7 @@
                             <h3>Roar of the lion!! meouuuw...</h3>
                         </div>
                         <div class="card-content">
-                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+                            <p>This card has missing text.</p>
                         </div>
                         <div class="card-footer">
                             <div class="card-footer-icon">
@@ -240,7 +259,7 @@
                             <h3>Gravity has nothing on me</h3>
                         </div>
                         <div class="card-content">
-                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. - so the cards themselves will stretch to the same height.</p>
                         </div>
                         <div class="card-footer">
                             <div class="card-footer-icon">
@@ -256,7 +275,7 @@
                             <h3>Hard night last night, feed me!</h3>
                         </div>
                         <div class="card-content">
-                            <p>This card has a lot more content which means that it defines the height of the container the cards are in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+                            <p>This card has less content which means that it defines the height of the container the cards are in. - so the cards themselves will stretch to the same height.</p>
                         </div>
                         <div class="card-footer">
                             <div class="card-footer-icon">

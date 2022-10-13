@@ -8,6 +8,8 @@
 
 html {
     font-size: 62.5%; /* setting rem units to be more readable - 1.6rem = 16px */
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -39,7 +41,16 @@ code span {
 
 
 .section {
-    padding: 4rem 0; 
+    padding: 4rem 0;
+    scroll-snap-align: start; 
+}
+
+.section::before {
+    content: '';
+    display: block;
+    position: relative;
+    margin-top: 19rem;
+    visibility: hidden;
 }
 
 .light {
@@ -93,9 +104,6 @@ code span {
     background-color: hsl(0, 0%, 95%);
 }
 
-.first-section {
-    margin-top: 17rem;
-}
 /* ============== structure tag styles ==================*/
 
 /* ============== Header mobile first styles ==================*/
@@ -246,10 +254,15 @@ header nav ul li a:hover {
 
 /* ============== Section text columns styles ==================*/
 
-.text-scale-hdln {
-    font-size: clamp(2.4rem, -2.82rem + 5.6vw, 3.8rem );
-    line-height: 3.2rem;
-    margin: 1.6rem 0 .8rem 0;
+.text-scale-headline1 {
+    /*clamp(min, val, max) => min-with 2.4rem = 24px, scale val = 5% of viewport width, max-width 3.8rem = 38px */
+    font-size: clamp(2.8rem, 5vw, 3.8rem );
+    line-height: clamp(4rem, 8vw, 6.4rem);
+}
+
+.text-scale-p {
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
+    line-height: clamp(2.8rem, 2vw, 3.2rem);
 }
 
 .text-columns {
@@ -270,7 +283,7 @@ header nav ul li a:hover {
     }
 
 
-    /* ============== Section Flexbox styles ==================*/
+    /* ============== Section Flexbox - Card Flow & Responsive Images ==================*/
 
 .card-container {
     display: flex;
@@ -281,9 +294,10 @@ header nav ul li a:hover {
 }
 
 .card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 40rem;
+    width: clamp(42rem, 50vw, 42rem);
     padding: 2.4rem;
     border: 1px solid hsl(0, 0%, 75%);
     border-radius: 2.4rem;
@@ -291,10 +305,11 @@ header nav ul li a:hover {
 }
 
 .responsive-img {
-    position: relative;
     width: 100%;
     height: auto;
-    max-width: 40rem;
+    object-fit: cover;
+    /*====== Test This ========*/
+     /*max-height: 23rem;*/
 }
 
 .card-title {
@@ -302,18 +317,20 @@ header nav ul li a:hover {
 }
 
 .card-content {
-    flex: 1 1 auto;
+    display: block;
+    overflow: hidden;
     text-overflow: ellipsis;
-    height: 12rem;
-    margin-bottom: 2.4rem;
+    height: auto;
+    margin-bottom: 6.4rem;
+    /*border: solid 1px red;*/
 }
 
 .card-footer {
-    position: relative;
+    position: absolute;
     clear: both;
-    top: 2.4rem;
-    left: -2.4rem;
-    width: 114%;
+    bottom: 0;
+    left: 0;
+    width: clamp(90%, 100%, 42rem);
     background-color: hsl(0, 0%, 75%);
     padding: 2.4rem;
     border-radius: 0 0 2.4rem 2.4rem;
